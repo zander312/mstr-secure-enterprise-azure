@@ -63,18 +63,13 @@
     ],
     "steps": [],
     "outputs": {
-        "adminUsername": "[basic('adminUsername')]",
-        "adminPassword": "[basic('adminPassword')]",
-        "domainNameLabel": "[basic('domainNameLabel')]",
-        "vnetName": "[basic('vnetName')]",
-        "vnetAddressPrefix": "[basic('vnetAddressPrefix')]",
-        "subnet1Prefix": "[basic('subnet1Prefix')]",
-        "subnet1Name": "[basic('subnet1Name')]",
-
-
+      "adminUsername": "[basic('adminUsername')]",
+      "adminPassword": "[basic('adminPassword')]",
+      "domainNameLabel": "[basic('domainNameLabel')]",
+      "vnetName": "[basic('vnetName')]",
+      "vnetAddressPrefix": "[basic('vnetAddressPrefix')]",
+      "subnet1Prefix": "[basic('subnet1Prefix')]",
+      "subnet1Name": "[basic('subnet1Name')]"
     }
   }
 }
-
-
-
