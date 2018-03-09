@@ -1,23 +1,80 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
-    "handler": "Microsoft.Compute.MultiVm",
-    "version": "0.1.2-preview",
-    "parameters": {
-        "basics": [
-            {}
-        ],
-        "steps": [],
-        "outputs": {
-            "vmName": "[steps('appSettings').vmName]",
-            "trialOrProduction": "[steps('appSettings').trialOrProd]",
-            "userName": "[steps('vmCredentials').adminUsername]",
-            "pwd": "[steps('vmCredentials').vmPwd.password]",
-            "applicationResourceName": "[steps('appSettings').vmName]",
-            "subnetName": "[steps('appSettings').virtualNetwork.subnets.subnet1.name]",
-            "subnetAddressPrefix": "[steps('appSettings').virtualNetwork.subnets.subnet1.addressPrefix]",
-            "vNetAddressPrefix": "[steps('appSettings').virtualNetwork.addressPrefix]",
-            "virtualNetworkName": "[steps('appSettings').virtualNetwork.name]",
-            "vNetRgName": "[steps('appSettings').virtualNetwork.resourceGroup]"
-        }
+  "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+  "handler": "Microsoft.Compute.MultiVm",
+  "version": "0.1.2-preview",
+  "parameters": {
+    "basics": [
+      {
+        "name": "adminUsername",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Admin Username",
+        "defaultValue": "admin",
+        "toolTip": "enter your username",
+        "visible": true
+      },
+      {
+        "name": "adminPassword",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Admin Password",
+        "defaultValue": "password",
+        "toolTip": "enter your password",
+        "visible": true
+      },
+      {
+        "name": "domainNameLabel",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Domain Name Label",
+        "defaultValue": "mstrenterprisevm",
+        "toolTip": "enter your resource group dns",
+        "visible": true
+      },
+      {
+        "name": "vnetName",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Vnet Name",
+        "defaultValue": "VNet1",
+        "toolTip": "enter your vnet name",
+        "visible": true
+      },
+      {
+        "name": "vnetAddressPrefix",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Vnet Address Prefix",
+        "defaultValue": "10.0.0.0/16",
+        "toolTip": "enter the CIDR block for your vnet",
+        "visible": true
+      },
+      {
+        "name": "subnet1Prefix",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Subnet Prefix",
+        "defaultValue": "10.0.0.0/24",
+        "toolTip": "enter the CIDR block for your subnet",
+        "visible": true
+      },
+      {
+        "name": "subnet1Name",
+        "type": "Microsoft.Common.TextBox",
+        "label": "Subnet Prefix",
+        "defaultValue": "10.0.0.0/24",
+        "toolTip": "enter your subnet name",
+        "visible": true
+      }
+    ],
+    "steps": [],
+    "outputs": {
+        "adminUsername": "[basic('adminUsername')]",
+        "adminPassword": "[basic('adminPassword')]",
+        "domainNameLabel": "[basic('domainNameLabel')]",
+        "vnetName": "[basic('vnetName')]",
+        "vnetAddressPrefix": "[basic('vnetAddressPrefix')]",
+        "subnet1Prefix": "[basic('subnet1Prefix')]",
+        "subnet1Name": "[basic('subnet1Name')]",
+
+
     }
+  }
 }
+
+
+
