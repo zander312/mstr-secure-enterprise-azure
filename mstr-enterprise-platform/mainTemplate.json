@@ -130,7 +130,7 @@
         },
         "storageProfile": {
           "imageReference": {
-            "id": "/subscriptions/bdbee725-7d35-480d-bf4e-fb60c22f514b/resourceGroups/virtual-machine-images-mstr-secure-enterprise/providers/Microsoft.Compute/images/mstr-7-18-image-20180308132702"
+            "id": "/subscriptions/bdbee725-7d35-480d-bf4e-fb60c22f514b/resourceGroups/testmstr22/providers/Microsoft.Compute/images/mstr-enterprise-platform"
           },
           "osDisk": {
             "name": "myManagedOSDisk",
